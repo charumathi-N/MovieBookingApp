@@ -1,0 +1,29 @@
+# Ignore compiled files
+*.class
+*.jar
+*.war
+.env
+# Ignore build directories
+target/
+bin/
+build/
+# Ignore compiled files
+*.class
+*.jar
+*.war
+
+# Ignore build directories
+target/
+bin/
+build/
+node_modules/
+
+# Ignore IDE-specific files
+.idea/
+.vscode/
+
+# Ignore logs and temporary files
+logs/
+temp/
+
+
