@@ -7,12 +7,15 @@ const adminSchema =new mongoose.Schema({
         required : true,
     },
     password:{
-        type: String,
+        type: String, 
         minLength: 6
     },
     addedMovies:[{
-       type: String
-    }]
+       type: mongoose.Types.ObjectId,
+       ref:"Movies",
+       
+    },
+]
 }) 
 
 export default mongoose.model("Admin",adminSchema);
