@@ -7,10 +7,13 @@ import userRouter from "./backend/routes/user-routers.js";
 import adminRouter from "./backend/routes/admin-routes.js";
 import movieRouter from "./backend/routes/movie-routes.js";
 import bookingsRouter from "./backend/routes/booking-routes.js";
+import cors from 'cors';
 
 dotenv.config();
 
 const app = express();
+
+app.use(cors()); // Place cors middleware before route definitions
 
 //middleware
 app.use(express.json()); //Post request should be json format
@@ -23,7 +26,6 @@ mongoose.connect(`mongodb+srv://Charumathi:${process.env.MONGODB_PASSWORD}@clust
 )
 .then(console.log("Connected to cloud DB and server is running"))
 .catch((e)=>console.log(e));
-
 
     app.use("/", (req,res,next)=>{
         res.send("Hi");

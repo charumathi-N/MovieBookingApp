@@ -4,8 +4,10 @@ function App() {
   return (
     <div>
       <Header/>
-      {/*Headers*/}
-      {/*HomePage*/}
+      <section>
+
+        
+      </section>
     </div>
   );
 }
