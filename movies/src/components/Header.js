@@ -3,10 +3,8 @@ import { AppBar, Autocomplete, Toolbar, TextField, Tabs, Tab } from "@mui/materi
 import MovieIcon from "@mui/icons-material/Movie";
 import { Box } from "@mui/system";
 import { getAllMovies} from "../api-helpers/api-helpers";
-import { Router } from "express";
+import { Link } from "react-router-dom";
 
-
-const dummyArray = ["Memory", "Brahmastra", "Forest grump"];
 const Header = () => {
     const [value, SetValue] = useState(0);
     const [movies, setMovies] = useState([]);
@@ -16,7 +14,7 @@ const Header = () => {
       .catch((err)=> console.log(err));
     })
   return (
-    <AppBar sx={{bgcolor:"#2b2d42"}}>
+    <AppBar position="sticky" sx={{bgcolor:"#2b2d42"}}>
       <Toolbar>
         <Box width={"20%"}>
           <MovieIcon />
@@ -34,9 +32,9 @@ const Header = () => {
         </Box>
         <Box display={"flex"}>
             <Tabs textColor="inherit" indicatorColor="secondary" value={value} onChange={(e,val)=>SetValue(val)} > 
-                <Tab  label="Movies"/>
-                <Tab  label="Admin"/>
-                <Tab  label="Auth"/> 
+                <Tab LinkComponent={ Link } to="/movies" label="Movies"/>
+                <Tab LinkComponent={ Link }  to="/admin" label="Admin"/>
+                <Tab LinkComponent={ Link }  to="/auth" label="Auth"/> 
             </Tabs>
         </Box>
       </Toolbar>
