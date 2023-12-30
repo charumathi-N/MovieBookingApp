@@ -12,7 +12,7 @@ const movieSchema = new mongoose.Schema({
     actors:[{type:String, required:true}],
     releaseDate:{
         type : Date,
-        required : true,
+       required : true,
     },
     posterUrl:{
         type : String,
@@ -25,7 +25,7 @@ const movieSchema = new mongoose.Schema({
     admin:{
         type :mongoose.Types.ObjectId,
         ref: "Admin",
-        required : true,
+     required : true,
     },
 });
 

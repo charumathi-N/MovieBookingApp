@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import AuthForm from '../Auth/AuthForm';
 
 function AdminAuth() {
+    const getData = (data)=>{
+         console.log("Auth",data);
+    }
     return (
-        <div></div>
+        <div><AuthForm onSubmit={getData}/></div>
     )
 }
 

@@ -15,8 +15,8 @@ function HomePage() {
     <Box width={"100%"} height="100%" margin="auto" marginTop={2}>
       <Box margin={"auto"} width="80%" height={"40%"} padding={2}>
         <img
-          src="https://i.ytimg.com/vi/Njsku3ql7UI/maxresdefault.jpg"
-          alt="Bramastra"
+          src="https://ew.com/thmb/0XGogtzJdyFN1hRdeLC1QzCk5Gk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/EH2_20211019_06515_R-2000-ad302f22295847708c252539c230d934.jpg"
+          alt="Sherlock holmes"
           width={"100%"}
           height={"100%"}
         />
