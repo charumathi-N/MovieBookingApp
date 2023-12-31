@@ -2,7 +2,7 @@ import Admin from "../models/Admin.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
-export const addAdmin = async (req, res, next) =>{
+export const signup = async (req, res, next) =>{
     const {email,password} = req.body;
     if(!email && email.trim() === "" && !password && password.trim() === ""){
         return res.status(422).json({message: "Invalid Inputs"})
@@ -55,6 +55,7 @@ export const adminLogin = async(req,res,next)=>{
     const token = jwt.sign({id:exsistingAdmin._id},process.env.SECRET_KEY,{
         expiresIn: "7d"
     });
+    //need to get this one
     return res.status(200).json({message:"Authentication completed successfully", token,id:exsistingAdmin._id})};
 
 export const getAdmins = async(req,res,next)=>{

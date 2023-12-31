@@ -3,7 +3,7 @@ import Booking from "../models/Booking.js";
 import bcrypt from "bcryptjs";
 
 export const getAllUsers = async (req, res, next) =>{
-    let users;
+    let users;        
     try{
         users = await User.find();
     }
@@ -39,7 +39,7 @@ export const addUser = async (req, res,next) =>{
     if(!user){
         return res.status(500).json({message:"Unexpected error"});
     }
-    return res.status(201).json({id: user._id});
+    return res.status(201).json({id: User._id});
 }
 
 export const updateUser = async (req, res, next)=>{

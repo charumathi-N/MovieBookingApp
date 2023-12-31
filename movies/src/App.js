@@ -5,6 +5,10 @@ import Movies from "./components/Movies/Movies";
 import Admin from "./components/Admin/Admin";
 import Auth from "./components/Auth/Auth";
 function App() {
+  const isAdminisLoggedIn = useSelector((state)=>state.admin.isLoggedIn);
+  const isUserisLoggedIn = useSelector((state)=>state.user.isLoggedIn); 
+  console.log("isAdminLoggedIn",isAdminisLoggedIn);
+  console.log("isAdminLoggedIn",isUserisLoggedIn);
   return (
     <div>
       <Header/>
