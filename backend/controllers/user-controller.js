@@ -102,7 +102,7 @@ export const login = async (req,res)=>{
     if(!isPasswordCorrect){
         return res.status(400).json({message:"Incorrect password"});
     }
-    return res.status(200).json({message:"Login Successful"});
+    return res.status(200).json({message:"Login Successful", id:`${exsistingUser.id}`});
 }
 
 export const getBookingOfUser = async (req, res, next) =>{
