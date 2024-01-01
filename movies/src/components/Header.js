@@ -51,29 +51,6 @@ const Header = () => {
           />
         </Box>
         <Box display={"flex"}>
-          {/* <Tabs textColor="inherit" indicatorColor="secondary" value={value} onChange={(e,val)=>SetValue(val)} > 
-                <Tab LinkComponent={ Link } to="/movies" label="Movies"/>
-                {!isAdminLoggedIn && !isUserLoggedIn && (
-                  <>
-                    <Tab LinkComponent={ Link }  to="/admin" label="Admin"/>
-                    <Tab LinkComponent={ Link }  to="/auth" label="Auth"/> 
-                  </>
-                )}
-                {isUserLoggedIn && (
-                  <>
-                    <Tab LinkComponent={ Link }  to="/user" label="Profile"/>
-                    <Tab onClick={()=>logout(false)} LinkComponent={ Link }  to="/" label="Logout"/> 
-                  </>
-                )}
-                  {isAdminLoggedIn && (
-                  <>
-                    <Tab LinkComponent={ Link }  to="/add" label="Add Movie"/>
-                    <Tab LinkComponent={ Link }  to="/add" label="Profile"/>
-                    <Tab onClick={()=>logout(true)} LinkComponent={ Link }  to="/admin" label="Logout"/> 
-                  </>
-                )}
-            </Tabs> */}
-
           <Tabs
             textColor="inherit"
             indicatorColor="secondary"
