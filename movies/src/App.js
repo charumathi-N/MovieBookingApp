@@ -6,7 +6,7 @@ import Admin from "./components/Admin/Admin";
 import Auth from "./components/Auth/Auth";
 import {useDispatch, useSelector} from "react-redux";
 import { useEffect } from "react";
-import { userActions } from "./store";
+import { userActions, adminActions } from "./store";
 
 function App() {
   const dispatch = useDispatch()
@@ -20,9 +20,9 @@ function App() {
       dispatch(userActions.login());
     }
     else if(localStorage.getItem("adminId")){
-      dispatch(userActions.login());
+      dispatch(adminActions.login());
     }
-  },[])
+  },[]);
   return (
     <div>
       <Header/>

@@ -6,6 +6,7 @@ import {
     Typography,
     Button
 } from "@mui/material";
+import { Link } from 'react-router-dom';
 function MovieItem({title,releaseDate,posterUrl,id}) {
     return (
         <Card sx={{width:250, margin:2, height:320, borderRadius:5, ":hover":{
@@ -21,7 +22,7 @@ function MovieItem({title,releaseDate,posterUrl,id}) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button sx={{margin:"auto"}} size='small'>Book</Button>
+          <Button LinkComponent={Link} to={`/booking/${id}`} sx={{margin:"auto"}} size='small'>Book</Button>
 
         </CardActions>
       </Card>

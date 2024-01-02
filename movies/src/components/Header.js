@@ -58,36 +58,21 @@ const Header = () => {
             onChange={(e, val) => SetValue(val)}
           >
             <Tab component={Link} to="/movies" label="Movies" />
-            {!isAdminLoggedIn &&
-              !isUserLoggedIn && [
-                <Tab key="admin" component={Link} to="/admin" label="Admin" />,
-                <Tab key="auth" component={Link} to="/auth" label="Auth" />,
+            {!isAdminLoggedIn && !isUserLoggedIn && [
+                <Tab key="admin" LinkComponent={Link} to="/admin" label="Admin" />,
+                <Tab key="auth" LinkComponent={Link} to="/auth" label="Auth" />,
               ]}
             {isUserLoggedIn && [
-              <Tab key="profile" component={Link} to="/user" label="Profile" />,
-              <Tab
-                key="logout"
-                onClick={() => logout(false)}
-                component={Link}
+              <Tab key="profile" LinkComponent={Link} to="/user" label="Profile" />,
+              <Tab key="logout" onClick={() => logout(false)} LinkComponent={Link}
                 to="/"
                 label="Logout"
               />,
             ]}
             {isAdminLoggedIn && [
-              <Tab key="add" component={Link} to="/add" label="Add Movie" />,
-              <Tab
-                key="adminProfile"
-                component={Link}
-                to="/add"
-                label="Profile"
-              />,
-              <Tab
-                key="adminLogout"
-                onClick={() => logout(true)}
-                component={Link}
-                to="/admin"
-                label="Logout"
-              />,
+              <Tab key="add" LinkComponent={Link} to="/add" label="Add Movie" />,
+              <Tab key="adminProfile" LinkComponent={Link} to="/admin" label="Profile"/>,
+              <Tab key="adminLogout" onClick={() => logout(true)} LinkComponent={Link} to="/" label="Logout"/>,
             ]}
           </Tabs>
         </Box>

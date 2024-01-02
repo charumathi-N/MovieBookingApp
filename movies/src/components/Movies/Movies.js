@@ -16,7 +16,7 @@ function Movies() {
                 All Movies
             </Typography>
             <Box width={"100%"} margin={"auto"} display={"flex"} justifyContent={"center"} flexWrap={"wrap"}>
-                {movies && movies.map((movie,index)=><MovieItem key={index} id={movie.id} posterUrl={movie.posterUrl} releaseDate={movie.releaseDate} title={movie.title}/>)}
+                {movies && movies.map((movie,index)=><MovieItem key={index} id={movie._id} posterUrl={movie.posterUrl} releaseDate={movie.releaseDate} title={movie.title}/>)}
             </Box>
         </Box>
     )
