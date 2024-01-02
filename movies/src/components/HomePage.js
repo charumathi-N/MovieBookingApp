@@ -10,7 +10,6 @@ function HomePage() {
       .then((data) => setMovies(data.movies))
       .catch((err) => console.log(err));
   }, []);
-  console.log(movies);
   return (
     <Box width={"100%"} height="100%" margin="auto" marginTop={2}>
       <Box margin={"auto"} width="80%" height={"40%"} padding={2}>
@@ -40,7 +39,7 @@ function HomePage() {
             .slice()
             .map((movie, item) => (
               <MovieItem
-                id={movie.id}
+                id={movie._id}
                 title={movie.title}
                 posterUrl={movie.posterUrl}
                 releaseDate={movie.releaseDate}

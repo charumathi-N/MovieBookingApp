@@ -69,11 +69,11 @@ const Header = () => {
                 label="Logout"
               />,
             ]}
-            {isAdminLoggedIn && [
-              <Tab key="add" LinkComponent={Link} to="/add" label="Add Movie" />,
-              <Tab key="adminProfile" LinkComponent={Link} to="/admin" label="Profile"/>,
-              <Tab key="adminLogout" onClick={() => logout(true)} LinkComponent={Link} to="/" label="Logout"/>,
-            ]}
+                 {isAdminLoggedIn && [
+              <Tab key="Add Movie" LinkComponent={Link} to="/add" label="Add Movie"/>,
+              <Tab key="Profile" LinkComponent={Link} to="/admin" label="Profile"/>,
+              <Tab key="Logout" onClick={() => logout(true)} LinkComponent={Link} to="/" label="Logout"/>,
+            ]} 
           </Tabs>
         </Box>
       </Toolbar>

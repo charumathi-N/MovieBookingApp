@@ -7,7 +7,7 @@ import Auth from "./components/Auth/Auth";
 import {useDispatch, useSelector} from "react-redux";
 import { useEffect } from "react";
 import { userActions, adminActions } from "./store";
-
+import Booking from "./components/Bookings/Booking"
 function App() {
   const dispatch = useDispatch()
   const isAdminisLoggedIn = useSelector((state)=>state.admin.isLoggedIn);
@@ -32,6 +32,7 @@ function App() {
           <Route path="/movies" element={<Movies/>}/>
           <Route path="/admin" element={<Admin/>}/>
           <Route path="/auth" element={<Auth/>}/>
+          <Route path="/booking/:id" element={<Booking/>}/>
         </Routes>
       </section>
     </div>

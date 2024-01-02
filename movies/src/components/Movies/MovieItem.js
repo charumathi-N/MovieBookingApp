@@ -23,7 +23,6 @@ function MovieItem({title,releaseDate,posterUrl,id}) {
         </CardContent>
         <CardActions>
           <Button LinkComponent={Link} to={`/booking/${id}`} sx={{margin:"auto"}} size='small'>Book</Button>
-
         </CardActions>
       </Card>
     )
