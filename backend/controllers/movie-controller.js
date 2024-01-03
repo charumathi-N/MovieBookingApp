@@ -75,6 +75,7 @@ export const getAllMovies = async (req, res) => {
 export const getAllMoviesById = async (req, res, next) => {
     const id = req.params.id;
     console.log(id);
+    console.log("I am inside movie router at 9:55 2/1/2024");
     let movies;
     try{
       movies = await Movie.findById(id);
@@ -85,5 +86,6 @@ export const getAllMoviesById = async (req, res, next) => {
     if(!movies){
         return res.status(500).json({message:"Invalid Movie ID"});
     }
+    console.log(movies);
     return res.status(200).json({movies})
 }

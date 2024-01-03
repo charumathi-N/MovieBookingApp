@@ -49,7 +49,36 @@ export const getMovieDetails = async (id) =>{
   if(res.status !== 200){
    return console.log("Unexpected status");
   }
-  const resData = await res.data;
+  const resData = await res.data;                                                      
   return resData;
+
+}
+
+export const newBooking = async(data) => {
+   const res = axios.post(`/booking/`,{
+      movie: data.movie,
+      seatNumber: data.seatNumber,
+      data: data.data,
+      user: localStorage.getItem("userId")
+   }).catch((err)=>console.error(err));
+
+   if(res.status !== 201){
+      return console.log("unexpected error");
+   }
+
+   const resData = await res.data;
+   return resData;
+}
+
+export const getUserBooking = async()=>{
+   const id = localStorage.getItem("userId");
+   const res = axios.get(`/user/bookings/${id}`)
+   .catch((err)=>console.log(err));
+ 
+   if(res.status !== 200){
+      return console.log("Unexpected Error");
+   }
+   const resData = await res.data;
+   return resData;
 
 }
