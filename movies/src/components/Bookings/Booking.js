@@ -8,6 +8,7 @@ const Booking = () => {
     const [movie, setMovie] = useState();
     const [inputs, setInputs] = useState({seatNumber:"", date:""});
     const id = useParams().id;
+
     useEffect(() => {
         const fetchMovieDetails = async () => {
             try {
@@ -19,17 +20,21 @@ const Booking = () => {
         };
         fetchMovieDetails();
     }, [id]);
+
+
     const handleChange = (e) =>{
         setInputs((prevState)=>({...prevState, [e.target.name]: e.target.value}))
     }
    
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(inputs.date); // Log the date input
+        console.log(inputs);
         newBooking({ ...inputs, movie: movie._id })
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
     };
+
     console.log(movie,inputs);
     return (
         <div>
@@ -65,8 +70,9 @@ const Booking = () => {
                                 <FormLabel>Seat Number</FormLabel>
                                 {/* <TextField value={inputs.seatNumber} onChange={handleChange} name='seatNumber' type={"number"} margin='normal' variant="standard"/>
                                 <TextField value={inputs.seatNumber} onChange={handleChange} name="date"  type={"date"} margin="normal" variant='standard'/> */}
-                                <TextField value={inputs.seatNumber} onChange={handleChange} name="seatNumber" type={"number"} margin="normal" variant="standard" />
-                                <TextField value={inputs.date} onChange={handleChange} name="date" type="date" margin="normal" variant="standard" />
+                                <TextField name="seatNumber" value={inputs.seatNumber} onChange={handleChange}  type={"number"} margin="normal" variant="standard" />
+                                <FormLabel>Booking Date</FormLabel>
+                                <TextField name="date" value={inputs.date} onChange={handleChange}  type={"date"} margin="normal" variant="standard" />
                                 <Button type='submit' sx={{mt:3}}>
                                     Book Now
                                 </Button>
